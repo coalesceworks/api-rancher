@@ -15,8 +15,9 @@ Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/xenial64"
   #config.vm.box_version = "1.1.0"
   config.vm.provision :shell, path: "installDefaults.sh"
-  config.vm.network "private_network", ip: "192.168.50.1"
-  config.vm.network :forwarded_port, guest: 8080, host: 3567
+  config.ssh.host = "192.168.50.10"
+  config.vm.network "private_network", ip: "192.168.50.10"
+  config.vm.network :forwarded_port, guest: 8080, host: 1567
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs

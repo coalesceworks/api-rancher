@@ -19,15 +19,18 @@ sudo apt-get -y install apt-transport-https ca-certificates software-properties-
 #sudo apt-get -y update
 
 #sudo apt-get -y install docker-ce
-#sudo apt install -y python-pip
+sudo apt install -y python-pip
 #sudo pip install --upgrade pip
 #sudo pip uninstall docker-py
 #sudo pip uninstall docker
 #sudo pip install docker
-#sudo pip install docker-compose
+
 
 curl https://releases.rancher.com/install-docker/17.03.sh | sh
 sudo usermod -aG docker ubuntu
+
+sudo pip install docker-compose
+sudo usermod -aG docker-compose ubuntu
 
 sudo mkdir /home/java
 sudo cp /vagrant/jdk-8u131-linux-x64.tar.gz /home/java/

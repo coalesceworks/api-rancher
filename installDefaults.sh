@@ -55,5 +55,11 @@ sudo sh /etc/profile.d/oraclejdk.sh
 
 echo "source to JDK path complete endof script"
 
+sudo wget https://services.gradle.org/distributions/gradle-4.0.2-bin.zip
+sudo mkdir /opt/gradle
+sudo unzip -d /opt/gradle/ gradle-4.0.2-bin.zip
+
+export PATH=$PATH:/opt/gradle/gradle-4.0.2/bin
+
 sudo apt-get -y update
 sudo apt-get -y upgrade

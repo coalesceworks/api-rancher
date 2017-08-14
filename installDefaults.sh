@@ -39,12 +39,17 @@ sudo wget http://mirror.vorboss.net/apache/maven/maven-3/3.5.0/binaries/apache-m
 sudo mkdir /opt/maven
 sudo unzip -d /opt/maven/ apache-maven-3.5.0-bin.zip
 
+sudo wget https://bintray.com/artifact/download/groovy/maven/apache-groovy-binary-2.4.12.zip
+sudo mkdir /opt/groovy
+sudo unzip -d /opt/groovy/ apache-groovy-binary-2.4.12.zip
+
 sudo cat > /etc/profile.d/oraclejdk.sh <<-EOF
 export J2SDKDIR=/home/java/jdk1.8.0_131
 export J2REDIR=/home/java/jdk1.8.0_131/jre
 export JAVA_HOME=/home/java/jdk1.8.0_131
 export DERBY_HOME=/home/java/jdk1.8.0_131/db
-export PATH=$PATH:/home/java/jdk1.8.0_131/bin:/home/java/jdk1.8.0_131/db/bin:/home/java/jdk1.8.0_131/jre/bin:/opt/gradle/gradle-4.0.2/bin:/opt/maven/apache-maven-3.5.0/bin
+export GROOVY_HOME=/opt/groovy/groovy-2.4.12
+export PATH=$PATH:/home/java/jdk1.8.0_131/bin:/home/java/jdk1.8.0_131/db/bin:/home/java/jdk1.8.0_131/jre/bin:/opt/gradle/gradle-4.0.2/bin:/opt/maven/apache-maven-3.5.0/bin:/opt/groovy/groovy-2.4.12/bin
 EOF
 
 
